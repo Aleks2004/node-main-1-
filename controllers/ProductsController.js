@@ -31,7 +31,7 @@ router.get("/products", (req, res) => {
       console.error(err);
       res
         .status(500)
-        .json({ error: "Произошла ошибка при получении работодателей:" });
+        .json({ error: "Произошла ошибка при получении товара:" });
       return;
     }
   
@@ -44,7 +44,7 @@ router.get("/products/:id", (req, res) => {
       console.error(err);
       res
         .status(500)
-        .json({ error: "Произошла ошибка при получении работодателя:" });
+        .json({ error: "Произошла ошибка при получении товара:" });
       return;
     }
   
@@ -75,10 +75,10 @@ router.post("/products", upload.single("photo"), (req, res) => {
       console.error(err);
       res
         .status(500)
-        .json({ error: "Произошла ошибка при добавлении работодателя:" });
+        .json({ error: "Произошла ошибка при добавлении товара:" });
       return;
     }
-    res.json({ message: "Работодатель успешно добавлен" });
+    res.json({ message: "Товар успешно добавлен" });
   });
 });
 
@@ -88,7 +88,7 @@ router.delete("/products/:id", (req, res) => {
       console.error(err);
       res
         .status(500)
-        .json({ error: "Произошла ошибка при получении работодателя:" });
+        .json({ error: "Произошла ошибка при получении товара:" });
       return;
     }
 
@@ -97,10 +97,10 @@ router.delete("/products/:id", (req, res) => {
         console.error(err);
         res
           .status(500)
-          .json({ error: "Произошла ошибка при удалении работодателя:" });
+          .json({ error: "Произошла ошибка при удалении товара:" });
         return;
       }
-      res.json({ message: "Работодатель успешно удален" });
+      res.json({ message: "Товар успешно удален" });
     });
   });
 });
@@ -110,10 +110,10 @@ router.delete("/delete-all-products", (req, res) => {
       console.error(err);
       res
         .status(500)
-        .json({ error: "Произошла ошибка при удалении работодателей:" });
+        .json({ error: "Произошла ошибка при удалении товара:" });
       return;
     }
-    res.json({ message: "Все работодатели успешно удалены" });
+    res.json({ message: "Все товары успешно удалены" });
   });
 });
 
@@ -138,10 +138,10 @@ router.put("/products/:id", upload.single("photo"), (req, res) => {
       console.error(err);
       res
         .status(500)
-        .json({ error: "Произошла ошибка при обновлении работодателя:" });
+        .json({ error: "Произошла ошибка при обновлении товара:" });
       return;
     }
-    res.json({ message: "Работодатель успешно обновлен" });
+    res.json({ message: "Товар успешно обновлен" });
   });
 });
 
